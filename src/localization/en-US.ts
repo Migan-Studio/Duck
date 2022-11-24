@@ -1,7 +1,7 @@
 export default {
   help: {
     name: 'help',
-    description: "mbpr project's help",
+    description: "Doremi's help",
     embeds: {
       title(botName: string): string {
         return `${botName}'s help`
@@ -19,7 +19,7 @@ export default {
   },
   ping: {
     name: 'ping',
-    description: "mbpr project's ping",
+    description: "Doremi's ping",
     embeds: {
       title(botName: string): string {
         return `${botName}'s ping`
@@ -31,7 +31,7 @@ export default {
   },
   kick: {
     name: 'kick',
-    description: "mbpr project's kick",
+    description: "Doremi's kick",
     options: [
       {
         name: 'member',
@@ -51,7 +51,7 @@ export default {
   },
   ban: {
     name: 'ban',
-    description: "mbpr project's ban",
+    description: "Doremi's ban",
     options: [
       {
         name: 'member',
@@ -71,7 +71,7 @@ export default {
   },
   clean: {
     name: 'clean',
-    description: "mpbr project's clean",
+    description: "Doremi's clean",
     options: [
       {
         name: 'clean-limit',
@@ -87,7 +87,7 @@ export default {
   },
   unban: {
     name: 'unban',
-    description: "mbpr project's unban",
+    description: "Doremi's unban",
     options: [
       {
         name: 'memberid',
@@ -99,5 +99,9 @@ export default {
       title: 'unban',
       description: 'The member has been unbaned.',
     },
+  },
+  info: {
+    name: 'information',
+    description: "Doremi's information",
   },
 }

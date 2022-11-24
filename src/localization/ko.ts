@@ -1,7 +1,9 @@
+import os from 'os'
+
 export default {
   help: {
     name: '도움말',
-    description: 'mbpr 프로젝트의 도움말',
+    description: 'Doremi의 도움말',
     embeds: {
       title(botName: string): string {
         return `${botName}의 도움말`
@@ -18,7 +20,7 @@ export default {
   },
   ping: {
     name: '핑',
-    description: 'mbpr 프로젝트의 핑',
+    description: 'Doremi의 핑',
     embeds: {
       title(botName: string): string {
         return `${botName}의 핑`
@@ -30,7 +32,7 @@ export default {
   },
   kick: {
     name: '추방',
-    description: 'mbpr 프로젝트의 추방',
+    description: 'Doremi의 추방',
     options: [
       {
         name: '멤버',
@@ -50,7 +52,7 @@ export default {
   },
   ban: {
     name: '차단',
-    description: 'mbpr 프로젝트의 차단',
+    description: 'Doremi의 차단',
     options: [
       {
         name: '멤버',
@@ -70,7 +72,7 @@ export default {
   },
   clean: {
     name: '채팅청소',
-    description: 'mbpr 프로젝트의 채팅청소',
+    description: 'Doremi의 채팅청소',
     options: [
       {
         name: '청소-제한',
@@ -86,7 +88,7 @@ export default {
   },
   unban: {
     name: '차단해제',
-    description: 'mbpr 프로젝트의 차단 해제',
+    description: 'Doremi의 차단 해제',
     options: [
       {
         name: '멤버id',
@@ -98,5 +100,40 @@ export default {
       title: '차단 해제',
       description: '해당 멤버를 차단해제 했어요.',
     },
+  },
+  info: {
+    name: '정보',
+    description: 'Doremi의 정보',
+    embeds: [
+      {
+        title: '봇정보',
+        description({
+          developerTag,
+          serverCount,
+          userCount,
+          wsPing,
+        }: {
+          developerTag: string
+          serverCount: number
+          userCount: number
+          wsPing: number
+        }): string {
+          return `# OS 정보
+- ${os.platform} ${os.arch}
+# 봇 개발자
+- ${developerTag}
+# Node.js 버전
+- ${process.version}
+# PID
+- ${process.pid}
+# 서버수
+- ${serverCount}
+# 유저수
+- ${userCount}
+# 지연시간
+- ${wsPing}`
+        },
+      },
+    ],
   },
 }

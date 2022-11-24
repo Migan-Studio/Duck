@@ -12,7 +12,16 @@ declare module 'discord.js' {
 
 export class MbprClient extends Client {
   public constructor() {
-    super({ intents: [GatewayIntentBits.Guilds], partials: [Partials.Channel] })
+    super({
+      intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.MessageContent,
+      ],
+      partials: [Partials.Channel],
+    })
   }
 
   public cmd: CommandHandler = new CommandHandler(this, {
